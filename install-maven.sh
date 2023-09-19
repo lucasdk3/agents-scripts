@@ -10,7 +10,8 @@ sudo apt update -y
 sudo apt upgrade -y
 
 sudo apt install openjdk-17-jdk -y
-# java -version
+
+java -version
 # TMP_MAVEN_VERSION=3.9.4
 # cd /tmp; wget https://apache.org/dist/maven/maven-3/$TMP_MAVEN_VERSION/binaries/apache-maven-$TMP_MAVEN_VERSION-bin.tar.gz -P /tmp
 # sudo tar xf /tmp/apache-maven-*.tar.gz -C /opt
