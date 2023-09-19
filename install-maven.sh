@@ -1,6 +1,7 @@
 #!/bin/sh
 set -e
-sudo apt-get -u upgrade -y
+sed -i '50s/^/# /' /etc/apt/sources.list
+sudo apt-get update
 sudo apt-get install default-jdk -y
 # java -version
 # TMP_MAVEN_VERSION=3.9.4
