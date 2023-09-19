@@ -1,6 +1,7 @@
 #!/bin/sh
 set -e
 
+sudo cat /etc/apt/sources.list
 sudo apt-get -u upgrade -y
 sudo apt install default-jdk -y
 java -version
@@ -14,6 +15,9 @@ if [ -d "/opt/maven" ]; then
 fi
 sudo ln -s /opt/apache-maven-$TMP_MAVEN_VERSION /opt/maven
 sudo touch /etc/profile.d/maven.sh
+ls -l /etc/profile.d/maven.sh
+echo $USER
+echo $user
 sudo chown -R /etc/profile.d/maven.sh
 
 sudo bash -c 'cat << EOF > /etc/profile.d/maven.sh
