@@ -1,13 +1,9 @@
 #!/bin/sh
 set -e
 
-sudo apt-get clean
-
 sudo apt-get update -y
 
 sudo apt-get upgrade -y
-
-sudo apt clean
 
 sudo apt update -y
 
