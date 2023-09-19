@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e
-sudo sed -i 's/azure\.//' /etc/apt/sources.list
+# sudo sed -i 's/azure\.//' /etc/apt/sources.list
 sudo apt-get clean
 sudo apt-get -u upgrade -y --fix-missing --fix-broken
 sudo apt install default-jdk -y --fix-missing
