@@ -34,7 +34,7 @@ sudo touch /etc/profile.d/maven.sh
 ls -l /etc/profile.d/maven.sh
 sudo chown -R root /etc/profile.d/maven.sh
 
-sudo bash -c 'cat << EOF > /etc/profile.d/maven.sh
+sudo sh -c 'cat << EOF > /etc/profile.d/maven.sh
 export JAVA_HOME=/usr/lib/jvm/default-java
 export M2_HOME=/opt/maven
 export MAVEN_HOME=/opt/maven
@@ -45,7 +45,7 @@ sudo chmod +x /etc/profile.d/maven.sh
 source /etc/profile.d/maven.sh
 mvn -v
 
-pip install PyYAML
+python3 -m pip install PyYAML
 
 # curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
