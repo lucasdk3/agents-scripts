@@ -36,7 +36,7 @@ sudo touch /etc/profile.d/maven.sh
 ls -l /etc/profile.d/maven.sh
 echo $USER
 echo $user
-whoamie
+whoami
 sudo chown -R /etc/profile.d/maven.sh
 
 sudo bash -c 'cat << EOF > /etc/profile.d/maven.sh
