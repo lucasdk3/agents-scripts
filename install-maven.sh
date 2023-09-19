@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e
-
+sudo apt-get clean -y
 sudo apt-get -u upgrade -y
 sudo apt install default-jdk -y
 java -version
