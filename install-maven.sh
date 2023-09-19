@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
-sudo apt-get update
-sudo apt-get upgrade -y
+
+sudo apt-get -u upgrade -y
 sudo apt install default-jdk -y
 java -version
 TMP_MAVEN_VERSION=3.9.4
@@ -14,9 +14,7 @@ if [ -d "/opt/maven" ]; then
 fi
 sudo ln -s /opt/apache-maven-$TMP_MAVEN_VERSION /opt/maven
 sudo touch /etc/profile.d/maven.sh
-echo $USER
-echo $user
-# sudo chown -R $USER /etc/profile.d/maven.sh
+sudo chown -R /etc/profile.d/maven.sh
 
 sudo bash -c 'cat << EOF > /etc/profile.d/maven.sh
 export JAVA_HOME=/usr/lib/jvm/default-java
@@ -30,7 +28,7 @@ source /etc/profile.d/maven.sh
 mvn -v
 
 # Install Docker CE
-sudo apt-get update -y
+sudo apt-get -u upgrade -y
 sudo apt-get install -y \
     apt-transport-https \
     ca-certificates \
