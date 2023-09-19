@@ -14,7 +14,7 @@ if [ -d "/opt/maven" ]; then
 fi
 sudo ln -s /opt/apache-maven-$TMP_MAVEN_VERSION /opt/maven
 sudo touch /etc/profile.d/maven.sh
-sudo chown $USER /etc/profile.d/maven.sh
+sudo chown -R $USER /etc/profile.d/maven.sh
 
 sudo bash -c 'cat << EOF > /etc/profile.d/maven.sh
 export JAVA_HOME=/usr/lib/jvm/default-java
