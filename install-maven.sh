@@ -3,15 +3,15 @@ set -e
 
 sudo apt-get clean
 
-sudo apt-get update
+sudo apt-get update -y
 
 sudo apt-get upgrade
 
 sudo apt clean
 
-sudo apt update
+sudo apt update -y
 
-sudo apt upgrade
+sudo apt upgrade -y
 
 java -version
 
