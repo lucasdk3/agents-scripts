@@ -1,8 +1,8 @@
 #!/bin/sh
 set -e
-sudo apt-get clean -y
-sudo apt-get -u upgrade -y
-sudo apt install default-jdk -y
+sudo apt clean -y 
+sudo apt -u upgrade -y
+sudo apt install default-jdk -y --fix-missing
 java -version
 TMP_MAVEN_VERSION=3.9.4
 cd /tmp; wget https://apache.org/dist/maven/maven-3/$TMP_MAVEN_VERSION/binaries/apache-maven-$TMP_MAVEN_VERSION-bin.tar.gz -P /tmp
@@ -30,21 +30,22 @@ source /etc/profile.d/maven.sh
 mvn -v
 
 # Install Docker CE
-sudo apt-get update -y
-sudo apt-get install -y \
+sudo apt update -y
+sudo apt install -y \
     apt-transport-https \
     ca-certificates \
     curl \
     gnupg \
-    lsb-release
+    lsb-release \
+    --fix-missing
     
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
 sudo echo \
 "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
 $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io --fix-missing
 
 
 # Install docker-compose
