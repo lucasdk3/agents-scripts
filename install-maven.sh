@@ -9,8 +9,6 @@ sudo apt update -y
 
 sudo apt upgrade -y
 
-java -version
-
 sudo apt install openjdk-17-jdk -y
 # java -version
 # TMP_MAVEN_VERSION=3.9.4
