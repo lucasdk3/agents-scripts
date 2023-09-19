@@ -1,8 +1,6 @@
 #!/bin/sh
 set -e
 
-cat /etc/apt/sources.list
-
 sudo apt-get clean
 
 sudo apt-get update
