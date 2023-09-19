@@ -5,3 +5,8 @@ az vmss extension set \
   --resource-group RG-PEPSICO-SHARED \
   --vmss-name private-azure-pool \
   --settings '{"fileUris": ["https://raw.githubusercontent.com/lucasdk3/agents-scripts/main/install-maven.sh"],"commandToExecute": "./install-maven.sh"}'
+
+  az vmss extension delete \
+    --name CustomScript \
+    --resource-group RG-PEPSICO-SHARED \
+    --vmss-name private-azure-pool 
