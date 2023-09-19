@@ -17,7 +17,7 @@ sudo sh -c "wget -O - https://dl.openfoam.org/gpg.key | apt-key add -"
 
 sudo add-apt-repository http://dl.openfoam.org/ubuntu
     
-sudo apt-get update
+sudo apt-get update -y
 
 sudo apt install openjdk-17-jdk -y
 
@@ -63,6 +63,10 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o 
 sudo echo \
 "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
 $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo sh -c "wget -O - https://dl.openfoam.org/gpg.key | apt-key add -"
+
+sudo add-apt-repository http://dl.openfoam.org/ubuntu
 
 sudo apt-get update -y
 
