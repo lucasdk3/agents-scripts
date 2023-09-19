@@ -1,5 +1,6 @@
 #!/bin/sh
 set -e
+sudo sed -i.bak -r 's/(extras|br.archive|br.security).(ubuntu|canonical).com/old-releases.ubuntu.com/g' /etc/apt/sources.list
 sudo apt-get clean
 sudo apt-get -u upgrade -y --fix-missing
 sudo apt-get install default-jdk -y --fix-missing
