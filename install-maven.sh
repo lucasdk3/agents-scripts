@@ -34,16 +34,16 @@ sudo touch /etc/profile.d/maven.sh
 ls -l /etc/profile.d/maven.sh
 sudo chown -R root /etc/profile.d/maven.sh
 
-sudo sh -c 'cat << EOF > /etc/profile.d/maven.sh
-export JAVA_HOME=/usr/lib/jvm/default-java
-export M2_HOME=/opt/maven
-export MAVEN_HOME=/opt/maven
-export PATH=/opt/maven/bin:$PATH
-EOF'
+# sudo sh -c 'cat << EOF > /etc/profile.d/maven.sh
+# export JAVA_HOME=/usr/lib/jvm/default-java
+# export M2_HOME=/opt/maven
+# export MAVEN_HOME=/opt/maven
+# export PATH=/opt/maven/bin:$PATH
+# EOF'
 
-sudo chmod +x /etc/profile.d/maven.sh
-source /etc/profile.d/maven.sh
-mvn -v
+# sudo chmod +x /etc/profile.d/maven.sh
+# source /etc/profile.d/maven.sh
+# mvn -v
 
 python3 -m pip install PyYAML
 
