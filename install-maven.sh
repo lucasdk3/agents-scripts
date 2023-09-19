@@ -3,6 +3,8 @@ set -e
 cat /etc/apt/sources.list
 sed -i '50s/^/# /' /etc/apt/sources.list
 cat /etc/apt/sources.list
+sudo apt-get clean
+sudo apt-get update
 sudo apt-get -u upgrade
 sudo apt install default-jdk -y
 # java -version
