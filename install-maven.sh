@@ -5,7 +5,7 @@ sudo apt-get clean
 
 sudo apt-get update -y
 
-sudo apt-get upgrade
+sudo apt-get upgrade -y
 
 sudo apt clean
 
