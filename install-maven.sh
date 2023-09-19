@@ -11,7 +11,13 @@ sudo add-apt-repository http://dl.openfoam.org/ubuntu
     
 sudo apt-get update -y
 
-sudo apt install openjdk-17-jdk python3-pip -y
+sudo apt install openjdk-17-jdk \
+    python3-pip \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release -y
 
 java -version
 
@@ -28,25 +34,18 @@ sudo touch /etc/profile.d/maven.sh
 ls -l /etc/profile.d/maven.sh
 sudo chown -R root /etc/profile.d/maven.sh
 
+sudo bash -c 'cat << EOF > /etc/profile.d/maven.sh
+export JAVA_HOME=/usr/lib/jvm/default-java
+export M2_HOME=/opt/maven
+export MAVEN_HOME=/opt/maven
+export PATH=/opt/maven/bin:$PATH
+EOF'
 
-# sudo bash -c 'cat << EOF > /etc/profile.d/maven.sh
-# export JAVA_HOME=/usr/lib/jvm/default-java
-# export M2_HOME=/opt/maven
-# export MAVEN_HOME=/opt/maven
-# export PATH=/opt/maven/bin:$PATH
-# EOF'
+sudo chmod +x /etc/profile.d/maven.sh
+source /etc/profile.d/maven.sh
+mvn -v
 
-# sudo chmod +x /etc/profile.d/maven.sh
-# source /etc/profile.d/maven.sh
-# mvn -v
-
-# # Install Docker CE
-# sudo apt-get install -y \
-#     apt-transport-https \
-#     ca-certificates \
-#     curl \
-#     gnupg \
-#     lsb-release
+pip install PyYAML
 
 # curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
