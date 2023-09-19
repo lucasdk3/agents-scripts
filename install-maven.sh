@@ -15,21 +15,18 @@ sudo apt install openjdk-17-jdk -y
 
 java -version
 
-# TMP_MAVEN_VERSION=3.9.4
-# cd /tmp; wget https://apache.org/dist/maven/maven-3/$TMP_MAVEN_VERSION/binaries/apache-maven-$TMP_MAVEN_VERSION-bin.tar.gz -P /tmp
-# sudo tar xf /tmp/apache-maven-*.tar.gz -C /opt
-# sudo rm /tmp/apache-maven-*-bin.tar.gz
-# install_dir="/opt/maven"
-# if [ -d "/opt/maven" ]; then
-#     sudo rm -rf /opt/maven
-# fi
-# sudo ln -s /opt/apache-maven-$TMP_MAVEN_VERSION /opt/maven
-# sudo touch /etc/profile.d/maven.sh
-# ls -l /etc/profile.d/maven.sh
-# echo $USER
-# echo $user
-# whoami
-# sudo chown -R /etc/profile.d/maven.sh
+TMP_MAVEN_VERSION=3.9.4
+cd /tmp; wget https://apache.org/dist/maven/maven-3/$TMP_MAVEN_VERSION/binaries/apache-maven-$TMP_MAVEN_VERSION-bin.tar.gz -P /tmp
+sudo tar xf /tmp/apache-maven-*.tar.gz -C /opt
+sudo rm /tmp/apache-maven-*-bin.tar.gz
+install_dir="/opt/maven"
+if [ -d "/opt/maven" ]; then
+    sudo rm -rf /opt/maven
+fi
+sudo ln -s /opt/apache-maven-$TMP_MAVEN_VERSION /opt/maven
+sudo touch /etc/profile.d/maven.sh
+ls -l /etc/profile.d/maven.sh
+sudo chown -R AzDevOps /etc/profile.d/maven.sh
 
 # sudo bash -c 'cat << EOF > /etc/profile.d/maven.sh
 # export JAVA_HOME=/usr/lib/jvm/default-java
