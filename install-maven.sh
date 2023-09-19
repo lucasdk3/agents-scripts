@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e
-sudo sed -i 's/azure\.//' /etc/apt/sources.list
+sudo apt-get update -y
 sudo apt-get -u upgrade -y
 sudo apt install default-jdk -y
 java -version
