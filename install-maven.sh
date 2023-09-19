@@ -1,6 +1,7 @@
 #!/bin/sh
 set -e
 # sudo sed -i 's/azure\.//' /etc/apt/sources.list
+sudo rm  /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_focal_main_binary-amd64_Packages
 sudo apt-get clean
 sudo apt-get -u upgrade -y --fix-missing --fix-broken
 sudo apt install default-jdk -y --fix-missing
