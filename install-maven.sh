@@ -11,7 +11,7 @@ sudo add-apt-repository http://dl.openfoam.org/ubuntu
     
 sudo apt-get update -y
 
-sudo apt install openjdk-17-jdk -y
+sudo apt install openjdk-17-jdk python3-pip -y
 
 java -version
 
@@ -27,6 +27,7 @@ sudo ln -s /opt/apache-maven-$TMP_MAVEN_VERSION /opt/maven
 sudo touch /etc/profile.d/maven.sh
 ls -l /etc/profile.d/maven.sh
 sudo chown -R AzDevOps /etc/profile.d/maven.sh
+
 
 # sudo bash -c 'cat << EOF > /etc/profile.d/maven.sh
 # export JAVA_HOME=/usr/lib/jvm/default-java
