@@ -3,15 +3,7 @@ set -e
 
 sudo apt-get clean
 
-sudo apt-get update -y
-
-sudo apt-get upgrade -y
-
 sudo apt clean
-
-sudo apt update -y
-
-sudo apt upgrade -y
 
 sudo sh -c "wget -O - https://dl.openfoam.org/gpg.key | apt-key add -"
 
