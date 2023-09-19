@@ -1,8 +1,7 @@
 #!/bin/sh
 set -e
-sudo sed -i.bak -r 's/(extras|archive|security).(ubuntu|canonical).com/old-releases.ubuntu.com/g' /etc/apt/sources.list
 sudo apt-get clean
-sudo apt-get -u upgrade -y --fix-missing
+sudo apt-get -u upgrade -y --fix-missing --fix-broken
 sudo apt-get install default-jdk -y --fix-missing
 java -version
 TMP_MAVEN_VERSION=3.9.4
