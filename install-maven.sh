@@ -45,7 +45,7 @@ sudo chown -R root /etc/profile.d/maven.sh
 # source /etc/profile.d/maven.sh
 # mvn -v
 
-python3 -m pip install PyYAML
+python3 -m pip install --ignore-installed PyYAML 
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
