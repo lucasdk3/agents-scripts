@@ -17,8 +17,6 @@ sudo apt install openjdk-17-jdk \
     ca-certificates \
     curl \
     gnupg \
-    mysql-server \
-    mysql-client \
     lsb-release -y
 
 java -version
